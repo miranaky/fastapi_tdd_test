@@ -21,3 +21,10 @@ RUN pip install -r requirements.txt
 
 # add app
 COPY . .
+
+# add wait_for_db.sh
+COPY ./wait_for_db.sh .
+RUN chmod +x /usr/src/app/wait_for_db.sh
+
+# run wait_for_db.sh
+ENTRYPOINT ["/usr/src/app/wait_for_db.sh"]
