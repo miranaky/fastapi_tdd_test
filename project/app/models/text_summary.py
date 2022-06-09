@@ -7,3 +7,7 @@ class TextSummary(SQLModel, table=True):
     url: str
     summary: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class SummaryPayloadSchema(SQLModel):
+    url: str
