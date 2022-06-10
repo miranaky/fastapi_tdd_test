@@ -227,3 +227,5 @@ cython_debug/
 env
 
 project/migrations/versions/*
+project/multidb
+project/alembic_test/versions/*
