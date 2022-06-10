@@ -3,7 +3,6 @@ import logging
 from fastapi import FastAPI
 
 from app.api import ping, summaries
-from app.postgresql import postgresql_connection
 
 logger = logging.getLogger("uvicorn")
 
@@ -22,7 +21,6 @@ app = create_application()
 @app.on_event("startup")
 async def startup_event():
     logger.info("Starting up...")
-    await postgresql_connection()
 
 
 @app.on_event("shutdown")
